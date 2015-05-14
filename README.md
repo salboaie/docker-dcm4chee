@@ -1,6 +1,3 @@
-This is a fork of forked from dpatriarche/docker-dcm4chee to make it run on new centos, ubuntu systems
-
-
 docker-dcm4chee
 ===============
 
@@ -10,11 +7,11 @@ This project builds a [Docker](https://www.docker.io/) image for the [DCM4CHEE](
 
 The 'dcm4chee' image is built as follows:
 
-    docker build --rm=true -t dcm4chee .
+    docker.io build --rm=true -t dcm4chee .
 
 Once built the 'dcm4chee' image is run as follows:
 
-    docker run -p 8080:8080 -p 11112:11112 --name="pacs" dcm4chee
+    docker.io run -p 8080:8080 -p 11112:11112 --name="pacs" dcm4chee
 
 Note that two ports must be mapped. Port 8080 is used by the DCM4CHEE web UI, while port 11112 is the DICOM port through which PACS workstations can perform DICOM network actions such as searching the archive, and downloading and uploading medical images.
 
