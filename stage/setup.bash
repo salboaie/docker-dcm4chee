@@ -1,4 +1,4 @@
-#!/bin/sh
+﻿#!/bin/sh
 set -v
 
 apt-get update
@@ -12,18 +12,18 @@ DCM4CHEE_HOME=/var/local/dcm4chee
 mkdir -p $DCM4CHEE_HOME
 cd $DCM4CHEE_HOME
 
-# Download the binary package for DCM4CHEE
-curl -G http://colocrossing.dl.sourceforge.net/project/dcm4che/dcm4chee/2.17.1/dcm4chee-2.17.1-mysql.zip > /stage/dcm4chee-2.17.1-mysql.zip
+# Copy the binary package for DCM4CHEE
+COPY ./dcm4chee-2.17.1-mysql.zip  /stage/dcm4chee-2.17.1-mysql.zip
 unzip -q /stage/dcm4chee-2.17.1-mysql.zip
 DCM_DIR=$DCM4CHEE_HOME/dcm4chee-2.17.1-mysql
 
-# Download the binary package for JBoss
-curl -G http://colocrossing.dl.sourceforge.net/project/jboss/JBoss/JBoss-4.2.3.GA/jboss-4.2.3.GA-jdk6.zip > /stage/jboss-4.2.3.GA-jdk6.zip
+# Copy the binary package for JBoss
+COPY ./jboss-4.2.3.GA-jdk6.zip  /stage/jboss-4.2.3.GA-jdk6.zip
 unzip -q /stage/jboss-4.2.3.GA-jdk6.zip
 JBOSS_DIR=$DCM4CHEE_HOME/jboss-4.2.3.GA
 
-# Download the Audit Record Repository (ARR) package
-curl -G http://colocrossing.dl.sourceforge.net/project/dcm4che/dcm4chee-arr/3.0.11/dcm4chee-arr-3.0.11-mysql.zip > /stage/dcm4chee-arr-3.0.11-mysql.zip
+# Copy the Audit Record Repository (ARR) package
+COPY ./dcm4chee-arr-3.0.11-mysql.zip  /stage/dcm4chee-arr-3.0.11-mysql.zip
 unzip -q /stage/dcm4chee-arr-3.0.11-mysql.zip
 ARR_DIR=$DCM4CHEE_HOME/dcm4chee-arr-3.0.11-mysql
 
